@@ -1,0 +1,319 @@
+# %%
+from pathlib import Path
+import json
+
+import matplotlib.pyplot as plt
+from matplotlib.transforms import ScaledTranslation
+import seaborn as sns
+import numpy as np
+import pandas as pd
+import torch
+
+from afb.data.image_annotation import AFBLabel
+from afb.utils.viz import wsi_ROC, show_im_grids_for_dataset
+from afb.data.wsi_tiles_dataset import WSITilesDataset
+from afb.utils.validation import collect_gt_and_pred_bboxes
+from afb.data.schema.pandas import coerce_pandas_item_ids
+
+OUTROOT = Path("/mnt/ri_share/Data/muir/afb/outputs/")
+
+
+# %%
+def colored_line(x, y, c, ax, **lc_kwargs):
+    """
+    Lifted straight from here:
+    https://matplotlib.org/stable/gallery/lines_bars_and_markers/multicolored_line.html
+
+
+    Plot a line with a color specified along the line by a third value.
+
+    It does this by creating a collection of line segments. Each line segment is
+    made up of two straight lines each connecting the current (x, y) point to the
+    midpoints of the lines connecting the current point with its two neighbors.
+    This creates a smooth line with no gaps between the line segments.
+
+    Parameters
+    ----------
+    x, y : array-like
+        The horizontal and vertical coordinates of the data points.
+    c : array-like
+        The color values, which should be the same size as x and y.
+    ax : Axes
+        Axis object on which to plot the colored line.
+    **lc_kwargs
+        Any additional arguments to pass to matplotlib.collections.LineCollection
+        constructor. This should not include the array keyword argument because
+        that is set to the color argument. If provided, it will be overridden.
+
+    Returns
+    -------
+    matplotlib.collections.LineCollection
+        The generated line collection representing the colored line.
+    """
+    import warnings
+    from matplotlib.collections import LineCollection
+
+    if "array" in lc_kwargs:
+        warnings.warn('The provided "array" keyword argument will be overridden')
+
+    # Default the capstyle to butt so that the line segments smoothly line up
+    default_kwargs = {"capstyle": "butt"}
+    default_kwargs.update(lc_kwargs)
+
+    # Compute the midpoints of the line segments. Include the first and last points
+    # twice so we don't need any special syntax later to handle them.
+    x = np.asarray(x)
+    y = np.asarray(y)
+    x_midpts = np.hstack((x[0], 0.5 * (x[1:] + x[:-1]), x[-1]))
+    y_midpts = np.hstack((y[0], 0.5 * (y[1:] + y[:-1]), y[-1]))
+
+    # Determine the start, middle, and end coordinate pair of each line segment.
+    # Use the reshape to add an extra dimension so each pair of points is in its
+    # own list. Then concatenate them to create:
+    # [
+    #   [(x1_start, y1_start), (x1_mid, y1_mid), (x1_end, y1_end)],
+    #   [(x2_start, y2_start), (x2_mid, y2_mid), (x2_end, y2_end)],
+    #   ...
+    # ]
+    coord_start = np.column_stack((x_midpts[:-1], y_midpts[:-1]))[:, np.newaxis, :]
+    coord_mid = np.column_stack((x, y))[:, np.newaxis, :]
+    coord_end = np.column_stack((x_midpts[1:], y_midpts[1:]))[:, np.newaxis, :]
+    segments = np.concatenate((coord_start, coord_mid, coord_end), axis=1)
+
+    lc = LineCollection(segments, **default_kwargs)
+    lc.set_array(c)  # set the colors of each segment
+
+    return ax.add_collection(lc)
+
+
+# %% [markdown]
+# ## Patch-grid examples
+# This is the version that will go in the supplement
+
+# %%
+val_dataset = WSITilesDataset(
+    root_dir=Path("/mnt/ri_share/Data/muir/afb/datasets/2024-12-16/test_poster"),
+)
+bbox_results = pd.read_csv(
+    "/mnt/ri_share/Data/muir/afb/outputs/2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/test_poster/bbox_results.csv"
+)
+item_results = pd.read_csv(
+    "/mnt/ri_share/Data/muir/afb/outputs/2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/test_poster/item_results.csv"
+)
+bbox_results = coerce_pandas_item_ids(bbox_results)
+item_results = coerce_pandas_item_ids(item_results)
+
+# collect_gt_and_pred_bboxes needs extra item-level metadata
+bbox_results = bbox_results.merge(item_results, how="left", on="item_id")
+
+print("collect all gnd truth & predicted bboxes that match target_class label")
+all_bboxes = collect_gt_and_pred_bboxes(val_dataset, bbox_results, AFBLabel.AFB.index())
+
+# %%
+seed = 41
+np.random.seed(seed=seed)
+torch.manual_seed(seed)
+imgrid = show_im_grids_for_dataset(
+    val_dataset,
+    all_bboxes,
+    priority="random",
+    n_ims=49,
+    n_ims_per_grid=49,
+    show_labels=False,
+    rescale_scores=(0.15, 0.75),
+    title="",
+)
+imgrid[0].savefig("patch_grid.png")
+
+# %% [markdown]
+# ## Object- & Slide-level results
+#
+
+# %% [markdown]
+# ### Ok now put it all together
+#
+# Let's do a 4-panel subplot: top 2 panels are object P-R curves above, left one shows training over multiple epochs and right one shows P-R vs object threshold w/ fancy colorbar. Bottom 2 panels show WSI-level classification as generated by `wsi_ROC`. Even if we want to split these 4 panels up into separate figs, generating them together this way will make it easier to get the fonts/glyphs/etc at a consistent size, and then we can just duplicate and crop however we like.
+
+# %%
+with open(
+    OUTROOT / "2024-12-30/2024-12-30_convnext_fcos_frozen_bb/val_metrics.json"
+) as f:
+    frozen_val_obj_mets = json.load(f)
+with open(
+    OUTROOT / "2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/val_metrics.json"
+) as f:
+    val_obj_mets = json.load(f)
+
+figsize = 9
+fig, ax = plt.subplots(
+    2, 2, figsize=(figsize, figsize), dpi=600 * 8.5 / figsize, layout="constrained"
+)
+
+# first convert dictionaries to DataFrame so seaborn can plot
+df_val_mets = []
+for k, v in frozen_val_obj_mets.items():
+    if "epoch" not in k:
+        continue
+    epoch = k.split("_")[1]
+    for th, prec, rec in zip(
+        val_obj_mets["box_score_thresh"],
+        v["precision"],
+        v["recall"],
+    ):
+        df_val_mets.append({"epoch": epoch, "thresh": th, "prec": prec, "recall": rec})
+
+for k, v in val_obj_mets.items():
+    if "epoch" not in k:
+        continue
+    epoch = str(3 + int(k.split("_")[1]))
+    for th, prec, rec in zip(
+        val_obj_mets["box_score_thresh"],
+        v["precision"],
+        v["recall"],
+    ):
+        df_val_mets.append({"epoch": epoch, "thresh": th, "prec": prec, "recall": rec})
+df_val_mets = pd.DataFrame(df_val_mets)
+
+df_val_mets = df_val_mets[
+    df_val_mets.epoch.isin(["0", "2", "3", "19", "27"]) & (df_val_mets.recall > 0.01)
+]
+df_val_mets["f1"] = (
+    2 * df_val_mets.prec * df_val_mets.recall / (df_val_mets.prec + df_val_mets.recall)
+)
+
+# for each epoch, grab the row with best F1 to plot dots separately
+df_maxf1 = pd.DataFrame()
+# with sort=False, should end up in same order as df_val_mets for color consistency
+for epoch, group_df in df_val_mets.groupby(by="epoch", sort=False):
+    df_maxf1 = pd.concat(
+        (df_maxf1, group_df[np.isclose(group_df.f1, group_df.f1.max())].copy())
+    )
+
+# ---------- P-R vs epoch subplot --------------
+palette = sns.color_palette("YlGnBu", 5)
+sns.lineplot(
+    data=df_val_mets,
+    x="recall",
+    y="prec",
+    hue="epoch",
+    units="epoch",
+    estimator=None,
+    palette=palette,
+    # lw=1.5,
+    legend=False,
+    ax=ax[0, 1],
+)
+for i, row in enumerate(df_maxf1.itertuples()):
+    ax[0, 1].plot(
+        row.recall,
+        row.prec,
+        "o",
+        color=palette[i],
+        label=rf"Epoch {row.epoch}, $F_1$={row.f1:.2f}",
+    )
+ax[0, 1].legend()
+ax[0, 1].set_title(f"Object Detection P-R Curves vs Training Epoch")
+
+# ---------- best P-R vs threshold subplot --------------
+# cutoff is to remove the garbage end of the curve where both P & R are ~0
+lc, hc = (0.20, 0.75)
+# rec, prec = val_obj_mets['epoch_16']['recall'][lc:hc], val_obj_mets['epoch_16']['precision'][lc:hc]
+# thresh, fbeta = val_obj_mets['box_score_thresh'][lc:hc], val_obj_mets['epoch_16']['fbeta'][lc:hc]
+# f1 = 2 * np.array(prec) * np.array(rec) / (np.array(prec) + np.array(rec))
+# ax.plot(rec, prec)
+best_pr = df_val_mets[
+    (df_val_mets.epoch == "19") & (df_val_mets.thresh > lc) & (df_val_mets.thresh < hc)
+]
+line = colored_line(
+    best_pr.recall,
+    best_pr.prec,
+    best_pr.thresh,
+    ax[0, 0],
+    # lw=3,
+    cmap="magma",
+)
+best_f1 = best_pr[np.isclose(best_pr.f1, best_pr.f1.max())].iloc[0]
+ax[0, 0].plot(
+    best_f1.recall,
+    best_f1.prec,
+    "o",
+    color="black",
+    label=rf"max $F_1$={best_f1.f1:.2f}",
+)
+ax[0, 0].legend()
+cbar = fig.colorbar(line, ax=ax[0, 0], location="bottom")
+cbar.set_label("Object Confidence Threshold")
+ax[0, 0].set_title(f"Example Object Detection Precision-Recall Curve")
+
+# -----------iso-F1 lines & common elements for both P-R plots -----------
+for i in (0, 1):
+    f_scores = np.linspace(0.3, 0.7, num=3)
+    anno_locs = (0.14, 0.3, 0.51)
+    for j, f_score in enumerate(f_scores):
+        x = np.linspace(0.01, 1)
+        y = f_score * x / (2 * x - f_score)
+        ax[0, i].plot(x[y >= 0], y[y >= 0], color="gray", alpha=0.2)
+        ax[0, i].annotate(r"$F_1$={0:0.1f}".format(f_score), xy=(0.83, anno_locs[j]))
+
+    ax[0, i].set_xlabel("Recall")
+    ax[0, i].set_ylabel("Precision")
+    ax[0, i].set_xlim(-0.03, 1.03)
+    ax[0, i].set_ylim(-0.03, 1.03)
+    # ax[0,i].set_xticks(np.arange(0, 1.01, 0.1))
+    # ax[0,i].set_yticks(np.arange(0, 1.01, 0.1))
+    ax[0, i].grid()
+
+# ------------ WSI-level plots ----------
+dens_th_dat = pd.read_csv(
+    OUTROOT
+    / "2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/testval_combined10k/density_threshold.csv"
+)
+_, rates = wsi_ROC(
+    dens_th_dat,
+    confidence_thresh=0.0,
+    ax=(ax[1, 1], ax[1, 0]),
+    bootstrap_resamps=500,
+)
+# markers for specific points on TNR/FNR tradeoff curve
+idx1 = np.searchsorted(rates["thresholds"], 1e-2)
+idx2 = np.searchsorted(rates["thresholds"], 4e-2)
+ax[1, 1].plot(
+    rates["fnr"][idx1],
+    rates["tnr"][idx1],
+    marker="^",
+    linestyle="",
+    color="black",
+    label=f"sensitivity={1-rates["fnr"][idx1]:.2f}, specificity={rates["tnr"][idx1]:.2f}",
+)
+ax[1, 1].plot(
+    rates["fnr"][idx2],
+    rates["tnr"][idx2],
+    marker="s",
+    linestyle="",
+    color="black",
+    label=f"sensitivity={1-rates["fnr"][idx2]:.2f}, specificity={rates["tnr"][idx2]:.2f}",
+)
+ax[1, 1].legend()
+
+# ------- subpanel labels to make pub-ready-------
+for label, sub_ax in zip(
+    ("(A)", "(B)", "(A)", "(B)"), (ax[0, 0], ax[0, 1], ax[1, 0], ax[1, 1])
+):
+    # lifted from the examples here:
+    # https://matplotlib.org/stable/gallery/text_labels_and_annotations/label_subplots.html
+    sub_ax.text(
+        0,
+        1,
+        label,
+        transform=(
+            sub_ax.transAxes + ScaledTranslation(-0.5, +0.2, fig.dpi_scale_trans)
+        ),
+        fontfamily="serif",
+        fontsize="x-large",
+        va="bottom",
+    )
+
+# %%
+fig.savefig("plots.png")
+
+# %%

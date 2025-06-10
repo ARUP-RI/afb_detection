@@ -1,0 +1,373 @@
+lab_id,clsi_m48,ao_pos,afb_positive,mgit_culture_positive,sample_type,sample_source,microbial_species,notes
+f1183d5b2be,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+b28cf92891b,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+672bef70cdd,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+dd19eeed01b,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+7839f2018ae,0,False,True,True,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Culture turned positive after 32 days, kin pos with cocci. MALDI-TOF ID M. avium-intracellulare complex."
+b5dd63058ab,0,False,True,True,decon/concentrated sample,,,"AO neg, culture positive after 6 days, kin pos with cocci. MALDI-TOF ID M. avium-intracellulare complex."
+25f57f33d3b,0,False,False,True,decon/concentrated sample,,,"AO neg, culture positive after 4 days, kin showed cocci. This could be an organism other than AFB.  NOT AFB. Final Negative for AFB 8/10"
+a46cf3f1e8b,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg., 7/23 neg, Final Negative 8/10"
+c9d34bc8140,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+a6777a9e679,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+2421f03c7d9,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+7ca1cc14c48,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+bba67e3d74e,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+8f19f8adc43,0,False,True,True,decon/concentrated sample,,,"7/1 neg., AO neg, culture turned positive after 15 days, kin positive. MALDI-TOF ID M. avium-intracellulare complex. "
+62a932a8db0,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+be998f64d9c,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+46a1358777f,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg., 7/23 neg, Final Negative 8/10"
+23d79d293d3,0,False,False,False,decon/concentrated sample,,,"7/1 neg.,  Patient sent for Fungal tests, positive for yeast not cryptococcus. Final Negative for AFB 8/10"
+314c7b711ca,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+df639259bdf,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg., 7/23 neg, Final Negative 8/10"
+60db76f61cb,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+ba1361f2c8a,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+6ec8a6b1b23,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+6fb8ff5a214,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+df49026c3a4,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+8d6586bb025,0,False,True,True,decon/concentrated sample,,,"AO neg, culture turned positive after 11 days, kin pos from culture. ID by MALDI-TOF M. simiae."
+eb10307aa3e,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+7139f634ff8,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+f4a58a6aad0,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+30404ef0325,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+06deaeb74d4,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+7857f157628,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+54154a051f4,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+5ea5432200f,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+45726fb9e13,1,True,True,True,decon/concentrated sample,,,"AO neg, Culture pos after 5 days, MALDI-TOF ID M. abscessus group. 1+ on kin slide"
+5cab3db53dc,1,True,True,True,decon/concentrated sample,,,"Culture positive after 4 days, kin pos from culture. MALDI-TOF id M. cosmeticum"
+af939c78745,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+8eea60997ce,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+923057d81ee,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+6c333e2fed2,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+64df07d8e8c,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+c28d00a9264,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+ee124c1b0da,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+c7dcccc7471,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, 7/23 neg, Final Negative 8/10"
+abc127b8e7e,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+f1689dbe898,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+ba3a5224578,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+b3bad389937,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+2aee62d9049,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+3876531e2cd,0,False,False,False,decon/concentrated sample,,,"7/1 neg., 7/9 neg, Final Negative 8/10"
+3097231afcb,0,False,False,False,decon/concentrated sample,bal,,
+d6a24ea57d5,0,False,False,False,decon/concentrated sample,wound,,Wound
+2099bbcf826,0,False,True,True,decon/concentrated sample,bal,Mycobacterium avium,"First AO slide call was negative; culture turned positive 10 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF"
+abde7bcdc7a,0,False,False,False,decon/concentrated sample,sputum,,
+8fb7bd11490,0,False,False,False,decon/concentrated sample,bal,,
+ad7f9851a69,0,False,False,False,decon/concentrated sample,respiratory-unspecified,,Respiratory
+44947ff31f2,0,False,False,False,decon/concentrated sample,bronchial-wash,,
+3d34f3b821e,0,False,False,False,decon/concentrated sample,tissue,,
+a4b68fe37a1,0,False,False,False,decon/concentrated sample,bronchial-wash,,
+e5d7a93a050,0,False,False,False,decon/concentrated sample,bodily-fluid,,Body fluid
+56e2d1a3a44,0,False,False,False,decon/concentrated sample,not-specified,,
+df5f1c41d63,0,False,False,False,decon/concentrated sample,tissue,,
+d9d11758788,0,False,False,False,decon/concentrated sample,bal,,
+bd5927dbc19,0,False,False,False,decon/concentrated sample,sputum,,
+91d725e1527,0,False,False,False,decon/concentrated sample,respiratory-unspecified,,Respiratory
+1ab221f88e3,0,False,False,False,decon/concentrated sample,aspirate,,
+9bc96fa69eb,0,False,False,False,decon/concentrated sample,tissue,,
+4d3ca5b33b0,0,False,False,False,decon/concentrated sample,tissue,,
+9c584e67ac6,0,False,False,False,decon/concentrated sample,sputum,,
+018da149f10,0,False,False,False,decon/concentrated sample,wound,,Wound
+b1c512c770a,0,False,False,False,decon/concentrated sample,sputum,,"Carbolfushin sediment/stain artifact. Verified negative KK 1/29/24
+Verified negative KK 1/29/24
+"
+14a65ee215c,0,False,False,False,decon/concentrated sample,bodily-fluid,,"Carbolfushin sediment/stain artifact, Verified negative EE 1/29/24, Body fluid
+Verified negative KK 1/29/24, Body fluid
+Body fluid"
+8ef1476a446,0,False,False,False,decon/concentrated sample,bodily-fluid,,"Carbolfushin sediment/stain artifact, Verified negative EE 1/29/24, Plural fluid
+Verified negative EE 1/29/24, Plural fluid"
+334ff6ecb5e,4,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"MTBC ID by MALDI-TOF, AO pos 4+, Culture turned positive after 8 days. Kin pos from culture"
+f4cd641664e,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+032e0839698,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+c76fb654614,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+ca873250798,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+Lots of stain artifacts and stingy stuff"
+207eaeff976,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+2d23afad64c,0,False,False,False,decon/concentrated sample,sputum,,"verified neg 1/30/24 EE
+Lots of stain artifacts good for negative training"
+70a97ea73a5,0,False,False,False,decon/concentrated sample,sputum,,"verified neg 1/30/24 EE
+looks like a lot of hairs everywhere. "
+461a24a0d7d,0,False,False,False,decon/concentrated sample,tissue,,This one is missing from the S20 cohort currently. Verified neg 1/30/24 EE
+414174b4365,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+c1c8e20934b,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+4f183402c3d,0,False,False,False,decon/concentrated sample,sputum,Pseudomonas aeruginosa,"verified neg 1/30/24 EE
+Lots of stain artifacts good for negative training. Gram positive Cocci, Pseudomonas aeruginosa. "
+921ee39865d,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+Lots of stain artifacts good for negative training"
+62f4e0fbb54,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+84eae145f37,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+Lots of stain artifacts good for negative training"
+ea82e411922,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+8df45094d73,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"Carbolfushin sediment/stain artifact, Heavily annotated, use this one. First AO slide call was negative; culture turned positive 4 days, Kin pos from culture, M. avium-intracellulare complex ID by MALDI-TOF
+First AO slide call was negative; culture turned positive 3 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF"
+02caec85af8,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Plural fluid
+Plural fluid"
+4bdb6184932,0,False,False,False,decon/concentrated sample,sputum,,"verified neg 1/30/24 EE
+Lots of cellular debris and stain artifacts"
+0c53f930976,2,True,True,True,decon/concentrated sample,other,Mycobacterium tuberculosis,"might be out of focus. Urine source,. AO pos 2+, culture pos after 9 days, kin pos from culture. MTBC pos by PCR. URINE"
+d2037a0a4e0,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Plural fluid
+Lots of stain artifacts and stingy stuff, Plural fluid"
+98c5e4dff64,3,True,True,True,decon/concentrated sample,bal,Mycobacterium avium,"AO pos 3+; culture turned positive 4 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF"
+31c6ca94048,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+be3e536dcc1,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+29e89eb95ed,0,False,False,False,decon/concentrated sample,wound,,"verified neg 1/30/24 EE, Wound
+Wound"
+b834f50f928,0,False,False,False,decon/concentrated sample,wound,,"verified neg 1/30/24 EE, Wound
+Lots of stain artifacts and stingy stuff, Wound "
+919dac7b81d,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+34aeb52d9bd,0,False,False,False,decon/concentrated sample,sputum,,"verified neg 1/30/24 EE
+Lots of stain artifacts"
+45fa7a9a1e7,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+a125fd08cd3,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+bfb332d0484,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+d1919ef9098,0,False,False,False,decon/concentrated sample,wound,,"verified neg 1/30/24 EE, Wound
+Wound"
+6ba47219955,0,False,False,False,decon/concentrated sample,wound,,Wound
+4e823e26de1,0,False,False,False,decon/concentrated sample,wound,,"verified neg 1/30/24 EE, Wound"
+333fdb3c72b,0,False,False,False,decon/concentrated sample,wound,,"verified neg 1/30/24 EE, Wound
+Wound"
+7f678f59b7a,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Body fluid"
+3fc3bc6a85a,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+62abbb6e2f1,0,False,False,False,decon/concentrated sample,bronchial-wash,,"verified neg 1/30/24 EE
+"
+fb6a22466c9,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Body fluid"
+a66bb5db4de,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+5ff392e9c3e,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+e5af2d3e21d,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+fbb91c509c6,0,False,False,False,decon/concentrated sample,respiratory-unspecified,,"verified neg 1/30/24 EE, Respiratory
+Respiratory"
+a1b887e2258,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Body fluid"
+32eecb0b31f,0,False,False,False,decon/concentrated sample,wound,,"verified neg 1/30/24 EE, Wound
+Wound"
+ccb4b4de981,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+e126d141ab8,0,False,False,False,decon/concentrated sample,bodily-fluid,Nocardia,"Norcardia?. Verified neg 1/30/24 EE, Body fluid
+verified neg 1/30/24 EE, Body fluid
+Body fluid"
+506ebc7362d,0,False,False,False,decon/concentrated sample,bal,,"focal plane looks like the ""dot"" variant, verified neg 1/30/24 EE
+verified neg 1/30/24 EE
+"
+da5b5323b91,0,False,False,False,decon/concentrated sample,tissue,,"focus?, verified neg 1/30/24 EE
+verified neg 1/30/24 EE
+"
+950c6787e68,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Body fluid"
+5288af42863,0,False,True,True,decon/concentrated sample,wound,Mycobacterium abscessus,"First AO slide call was negative; culture turned positive 10 days, Kin pos from culture, M. abscessus group identified by MALDI-TOF, Wound"
+7c81bd9cc23,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/31/24 EE
+Lots of stain artifacts and stingy stuff"
+e95e5a687cb,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/31/24 EE
+"
+c0db6aa4326,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/31/24 EE, Plural fluid
+Plural fluid"
+58f8a371d46,0,False,False,False,decon/concentrated sample,bal,Fungi,"verified neg 1/30/24 EE
+positive for fungi"
+c98b255dcd9,0,False,False,False,decon/concentrated sample,bal,,verified neg 1/31/24 EE
+813ddeab703,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"AO pos 2+; culture turned positive 8 days, Kin pos from culture, MTBC identified by MALDI-TOF"
+7a6b905f3bb,3,True,True,True,decon/concentrated sample,respiratory-unspecified,Mycobacterium avium,"AO pos 3+; culture turned positive 4 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF, Respiratory"
+fcecce1931f,0,False,False,False,decon/concentrated sample,bronchial-wash,,"verified neg 1/30/24 EE
+"
+ee225b2fdcb,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Body fluid"
+db08d3e539d,0,False,False,False,decon/concentrated sample,sputum,,"verified neg 1/30/24 EE
+Lots of cellular debris and stain artifacts"
+127923afdbd,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+cdbfdb9a716,0,False,False,False,decon/concentrated sample,tissue,,"out of focus, verified neg 1/30/24 EE
+verified neg 1/30/24 EE
+"
+1609ccc4752,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+e4348ba921f,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Lots of debris and stringy stuff, Body fluid"
+b38daa4640f,0,False,True,True,decon/concentrated sample,respiratory-unspecified,Mycobacterium avium,"First AO slide call was negative; culture turned positive 9 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF, Respiratory"
+e774c6b27bf,0,False,False,False,decon/concentrated sample,respiratory-unspecified,Yeast,"Final culture positive for Yeast. Verified AFB neg 1/30/24 EE, respiratory
+Positive for yeast., respiratory"
+03e080adc62,0,False,False,False,decon/concentrated sample,bronchial-wash,,"verified neg 1/30/24 EE
+"
+cdfd2ca5f7e,0,False,False,False,decon/concentrated sample,bronchial-wash,,"verified neg 1/30/24 EE
+Lots of stain artifacts good for negative training"
+65ea8152e73,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+24b52b489eb,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+Lots of stain artifacts and stingy stuff"
+0c102d0ff4f,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Lots of stain artifacts and stingy stuff, Body fluid"
+5038185afb0,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+Lots of stain artifacts and stingy stuff"
+aaabede4978,0,False,False,False,decon/concentrated sample,wound,,"Lots of stain artifacts and stingy stuff, wound knee"
+e3bbbc118d9,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+87b0e29cedc,0,False,False,False,decon/concentrated sample,isolate,,"verified neg 1/30/24 EE
+"
+5bb4f69fd38,0,False,False,False,decon/concentrated sample,bal,,"verified neg 1/30/24 EE
+"
+4ad2336a94d,0,False,False,False,decon/concentrated sample,respiratory-unspecified,,"verified neg 1/30/24 EE, Respiratory 
+verified neg 1/30/24 EE, Respiratory
+Lots of stain artifacts, Respiratory "
+5b714a69e64,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Body fluid"
+276de2df541,0,False,False,False,decon/concentrated sample,sputum,,"verified neg 1/30/24 EE
+"
+75fd9c1fba6,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Plural fluid
+Plural fluid"
+c0875af194e,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+acfabd69112,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+verified neg 1/30/24 EE
+Body fluid"
+f56b4eacfaf,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+4433fbad142,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+verified neg 1/30/24 EE
+Lots of stain artifacts good for negative training, body fluid
+"
+e9cfa7a1010,0,False,True,True,decon/concentrated sample,sputum,Mycobacterium malmoense,"Pos for Streptomyces by DNA sequencing AND Mycobacterium malmoense by MALDI-TOF
+Lots of gunk good for negative training. Culture positive for Streptomyces and AFB. AO neg"
+a5f3ddfcfc1,0,False,False,False,decon/concentrated sample,sputum,Mycobacterium fortuitum,"Patient was culture pos for M. fortuitum in 2018, but culture neg several time since
+"
+19e36277b54,0,False,False,False,decon/concentrated sample,sputum,,"verified neg 1/30/24 EE
+"
+17cee39fcab,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+96e9d241513,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Lots of stain artifacts good for negative training, Body fluid"
+5144b9044a8,0,False,False,False,decon/concentrated sample,tissue,,"verified neg 1/30/24 EE
+"
+40eb02859e4,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Body fluid
+Lots of stain artifacts good for negative training, Body fluid"
+3df97e6b5bf,0,False,False,False,decon/concentrated sample,bodily-fluid,,"verified neg 1/30/24 EE, Plural fluid
+"
+7ceb273a2fa,0,False,True,True,decon/concentrated sample,respiratory-unspecified,Mycobacterium avium,"First AO slide call was negative; culture turned positive 11 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF, respiratory sample
+First AO slide call was negative; culture turned positive 11 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+6d49a073c26,3,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"First AO negative, culture turned pos 6 days, Kin pos from culture, MTBC ID by MALDI-TOF"
+2020b6bd730,3,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"First AO was negative, culture positive 5 days, Kin pos, ID MTBC by MALDI-TOF."
+6db8a199001,1,True,True,True,decon/concentrated sample,sputum,,"Carbolfushin sediment/stain artifact, slow growing AFB. AO pos 1+, culture went positive after 22 days. Kin pos from culture"
+f8c2b44b2c5,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"First AO slide call was negative; culture turned positive 6 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF. Carbolfushin sediment/stain artifact. 
+First AO slide call was negative; culture turned positive 6 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF. "
+2af45464ca5,2,True,True,True,decon/concentrated sample,bal,Mycobacterium avium,"AO pos 2+; culture turned positive 4 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF. Carbolfushin sediment/stain artifact."
+0351d388a55,1,True,True,True,decon/concentrated sample,bal,Mycobacterium florentinum,"Carbolfushin sediment/stain artifact. AO pos 1+, culture turned positive 10 days, Kin pos from culture, M. florentinum ID by MALDI-TOF"
+a13d7e6ac18,3,True,True,True,mgit culture,sputum,Mycobacterium tuberculosis,"First AO slide call was negative; culture turned positive 4 days, Kin pos from culture, MTBC identified by MALDI-TOF"
+5b104903f71,4,True,True,True,mgit culture,sputum,Mycobacterium tuberculosis,"First AO slide call was negative; culture turned positive 10 days, Kin pos from culture, MTBC identified by PCR"
+3920c4547fd,4,True,True,True,mgit culture,sputum,Mycobacterium tuberculosis,"First AO slide call was negative; culture turned positive 5 days, Kin pos from culture, MTBC identified by PCR"
+3d73bb6c7fe,0,False,False,False,decon/concentrated sample,sputum,,"Verified negative KK 1/29/24
+"
+2b92ee55358,0,False,False,False,decon/concentrated sample,bodily-fluid,,"Verified negative KK 1/29/24, peritoneal fluid
+Lots of debris and stringy stuff
+"
+d5e623823a8,3,True,True,True,mgit culture,sputum,Mycobacterium avium,"AO pos 3+; culture turned positive 4 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+c1d57577b8d,3,True,True,True,mgit culture,sputum,Mycobacterium tuberculosis,"First AO slide call was negative; culture turned positive 7 days, Kin pos from culture, MTBC identified by MALDI-TOF and PCR"
+b688acd9a64,0,False,False,False,decon/concentrated sample,wound,,"Verified negative KK 1/29/24, wound
+"
+1e3e750b285,0,False,False,False,decon/concentrated sample,bodily-fluid,,"Verified negative KK 1/29/24, knee fluid
+"
+0d8b293a236,0,False,False,False,decon/concentrated sample,sputum,,"Verified negative KK 1/29/24
+"
+b015d6a6584,3,True,True,True,mgit culture,sputum,Mycobacterium avium,"First AO slide call was negative; culture turned positive 6 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+54c3416d1c0,3,True,True,True,mgit culture,sputum,Mycobacterium avium,"First AO slide call was negative; culture turned positive 8 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+389defe7110,3,True,True,True,mgit culture,sputum,Mycobacterium tuberculosis,"AO pos 3+; culture turned positive 8 days, Kin pos from culture, MTBC identified by MALDI-TOF"
+5975aaedabe,0,False,,,,,,
+6e12cd2a4ab,0,False,True,True,decon/concentrated sample,isolate,Mycobacterium avium,"it was an isolate that was sent to be decontaminated because it was a mixed culture. M. avium-intracellulare complex ID by MALDI-TOF. Culture had to be subbed onto a selective media 7H9 which was pos for AFB and other bacteria.   9/23 Spoke with Amanda for clarification on this sample results. No AO was performed on this sample, but the sample was re-deconed and ended up MGIT pos. and was kin pos from culture."
+496ba95a501,1,True,True,True,decon/concentrated sample,bal,Mycobacterium avium,"AO pos 1+; culture turned positive 5 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+53d8a4afe98,3,True,True,True,decon/concentrated sample,bal,Mycobacterium avium,"AO pos 3+; culture turned positive 4 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+bf85e7921da,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"First AO slide call was negative; culture turned positive 5 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+9fd3aa6bfc1,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"AO pos 2+; culture turned positive 3 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+ab9148d71ee,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"AO pos 2+; culture turned positive 4 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+40cfed50590,0,False,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"First AO slide call was negative; culture turned positive 7 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+57a95fd171d,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"AO pos 2+; culture turned positive 5 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+6586da52360,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"M. avium-intracellulare complex, confirmed results in Millenium and results by accession sheet. Initial AO slide read was negative, culture pos after 6 days, kin pos from culture. Good sample to look at ."
+56eef3e03a4,0,False,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"Initial slide call was negative for AFB but culture went positive 7 days, kin pos from culture. MALDI-TOF ID M. avium-intracellulare complex"
+fe3d28ab83f,0,False,True,True,decon/concentrated sample,sputum,Mycobacterium chelonae,"First AO was negative, culture positive 7 days, Kin pos, ID M. chelonae complex by MALDI-TOF.
+First AO slide call was negative; culture turned positive 7 days, Kin pos from culture, M. chelonae complex identified by MALDI-TOF"
+8efa329b38a,,,True,True,decon/concentrated sample,other,Mycobacterium avium,"No AO slide call on this one as spec type was stool, culture eventually went pos though. Initial slide call was negative, culture turned positive 11 days, Kin pos from culture, M. avium-intracellulare complex ID by MALDI-TOF. No CLSI scale reported in final report. STOOL"
+41b034be73e,0,False,True,True,decon/concentrated sample,not-specified,Mycobacterium avium,"Positive for M. avium ID by MALDI-TOF 10/10/23, MGIT pos kin pos from culture
+First AO slide call was negative; culture turned positive 8 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF"
+de6f5911481,0,False,True,True,decon/concentrated sample,not-specified,Mycobacterium avium,"Positive for M. avium ID by MALDI-TOF 10/10/23, Culture went positive after 9 days.
+First AO slide call was negative; culture turned positive 9 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TO. 2nd specimen collected from same patient (23255144829)."
+5784b722a8e,0,False,True,True,decon/concentrated sample,bal,Mycobacterium avium,"Positive for M. avium ID by MALDI-TOF 10/10/23, culture pos after 9 days, kin pos from culture.
+First AO slide call was negative; culture turned positive 9 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF. Also positive for Aspergillus fumigatus. "
+bde444f5562,0,False,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"Positive for M. avium ID by MALDI-TOF 10/10/23, Culture went positive after 10 days. Kin pos from culture
+First AO slide call was negative; culture turned positive 10 days, Kin pos from culture, M. avium-intracellulare identified by MALDI-TOF. 2nd specimen collect from same patient (23255108996)."
+6aa909d0ded,0,False,,,,,,
+0510d918bb1,0,False,True,True,decon/concentrated sample,respiratory-unspecified,Mycobacterium avium,"Initial slide call was negative for AFB but culture went positive, kin pos from culture and MALDI-TOF ID M. avium-intracellulare complex, Repiratory sample"
+ecc9cdc8807,0,False,True,True,decon/concentrated sample,tissue,Mycobacterium tuberculosis,"Initial slide call was negative for AFB but culture went positive, kin pos from culture and MALDI-TOF and PCR ID MTB"
+26e5dc74aa1,0,False,True,True,decon/concentrated sample,sputum,Mycobacterium avium,Initial slide call was negative for AFB but culture went positive and MALDI-TOF ID M. avium-intracellulare complex
+182152cc0e5,0,False,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"Initial slide call was negative for AFB but culture went positive, kin pos from culture and MALDI-TOF ID M. avium-intracellulare complex"
+1205c08ca1c,2,True,True,True,decon/concentrated sample,bal,Mycobacterium avium,"M. avium-intracellulare complex. Heavily annotated, use this one. Culture turned positive after 3 days, kin pos from culture."
+0862fa6fde9,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"First AO was negative, culture positive 5 days, Kin pos, ID M. avium-intracellulare complex by DNA seq."
+756d8da9b66,1,True,True,False,decon/concentrated sample,tissue,,"AFB 1+, culture negative"
+af723215285,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium abscessus,"M. abscessus ID by MALDI-TOF. Kin pos from culture
+Mycobacterium abscusses, heavily annotated use this one. Culture turned positive after 4 days, kin pos from culture.
+Mycobacterium abscusses, heavily annotated use this one. Kin pos from culture"
+1de2efafc18,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,MTBC ID by MALDI-TOF kin pos from culture. AO pos 2+
+78c61bb4191,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium abscessus,"AO pos 1+, culture turned positive after 5 days, kin pos from culture. MALDI-TOF ID Mycobacterium abscusses, heavily annotated use this one."
+753f35dc5f3,1,True,True,True,decon/concentrated sample,bodily-fluid,Mycobacterium tuberculosis,"Inital AO neg, culture pos after 10 days, kin pos from culture. MTB ID by PCR  Plural fluid"
+ff0dce0ab50,1,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium avium,"Initial AO was neg, culture pos after 5 days, kin pos from culture. MALDI-TOF ID M. avium-intracellulare complex. Heavily annotated, use this one."
+8c4fc7555b3,1,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium tuberculosis,MTBC ID by MALDI-TOF. Initial AO pos 1+. Culture turned positive after 19 days.
+cdfa0d553b2,1,True,True,False,decon/concentrated sample,sputum,,"AFB 1+, culture negative. No organism ID."
+dbe56ffcdf3,2,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium avium,"Initial AO was neg, culture pos after 4 days, kin pos from culture. M. avium-intracellulare complex ID by MALDI-TOF . Heavily annotated, use this one."
+21480c25ffc,1,True,True,True,decon/concentrated sample,not-specified,Mycobacterium abscessus,"First AO was negative, culture positive 5 days, Kin pos, ID M. abscessus group by MALDI-TOF."
+2062c0e9166,1,True,True,False,decon/concentrated sample,sputum,,"AFS 1+, culture negative. No organism identified."
+0d07660d3b9,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"Initial AO call negative, culture turned pos 5 days, Kin pos from culture, ID by MALDI-TOF M. avium-intracellulare complex. Heavily annotated, use this one. "
+26f2b369351,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis," Initial AO slide call negative; culture turned positive 6 days, Kin pos from culture, MTBC Heavily annotated, use this one. ID by MALDI-TOF"
+8a588482a58,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"Initial AO slide call was negative, culture turned positive 10 days, Kin pos from culture,  MTB ID by PCR. Heavily annotated, use this one"
+5b37558d24c,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"Initial AO was neg, culture pos after 6 days, kin pos from culture. MTBC ID by PCR and MALDI-TOF. "
+aa31082d459,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"Initial AO was neg, culture turned pos after 7 days, kin pos from culture. MTBC ID by PCR. "
+533db9c856d,2,True,True,False,decon/concentrated sample,not-specified,Mycobacterium tuberculosis,"Initial slide call is AFB 2+,  culture was negative for AFB. No organism ID."
+19b04fb1041,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"Initial AO neg, culture turned pos after 4 days. Culture also positive for filamentous fungi. M. avium-intracellulare complex ID by MALDI-TOF"
+e776e9fa021,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium kansasii,"Initial AO neg, culture turned positive after 15 days, kin pos from culture. MALDI-TOF ID M. kansasii complex
+Heavily annotated use this one., M. kansasii, positive and negative culture results"
+cb95f8bb752,1,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium kansasii,"Initial AO slide was neg, culture turned positive after 9 days, kin pos from culture. M. kansasii complex ID by  MALDI-TOF"
+d61982f7d7d,1,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium abscessus,"Initial AO slide call was negative, culture turned positiive after 4 days, Kin pos from culture, ID by MALDI-TOF M. abscessus group or M. avium-intracellulare complex. "
+26b1f7b22a9,1,True,True,True,decon/concentrated sample,not-specified,Mycobacterium tuberculosis,"Initial AO slide call was negative, culture turned positive 13 days, Kin pos from culture,  MTBC ID by MALDI-TOF. heavily annotated use this one. "
+83fbc12a788,1,True,True,False,decon/concentrated sample,sputum,,"Initial slide call is AFB 1+, culture was negative for AFB. No organism identified. "
+c76a3998a43,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"First AO slide call was negative; culture turned positive 5 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+055df50db63,2,True,True,False,decon/concentrated sample,sputum,Unidentified / not viable,Culture was negative for acid fast bacilli. Jeff explained sometimes the oragnism is not viable.
+81359efdbd9,1,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium abscessus,"AO pos 1+, culture turned positive after 6 days, kin pos from culture. PCR test identified Mycobacteriodes abscessus group."
+34f11d99d34,2,True,True,True,decon/concentrated sample,bal,Mycobacterium tuberculosis,"AO positive 2+ culture turned positive 5 days, Kin pos from culture, MTBC ID by PCR"
+8e703da24cd,1,True,True,True,decon/concentrated sample,sputum,,"Mycobacteriodes and Gordonia were identified. First AO slide negative, culture turned positive 5 days, Kin pos from culture."
+9def9631fe6,1,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium avium,"AO positive 1+; culture turned positive 6 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+f3db1716598,1,True,True,True,decon/concentrated sample,bal,Mycobacterium avium,"First AO slide call was negative; culture turned positive 6 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+759fb5eafd6,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"First AO slide call was negative; culture turned positive 4 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+0595b7f6c00,2,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium avium,"First AO slide call was negative; culture turned positive 5 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+160c8b7bc96,0,False,False,False,decon/concentrated sample,sputum,,"No date on slide, unsure of sample type, Verified negative EE 1/29/24
+Lots of stain artifacts and stingy stuff
+"
+e41d05cb44a,0,False,,,,,,
+bd52f6b34e8,0,False,False,False,decon/concentrated sample,bodily-fluid,,"No date on slide, unsure of sample type. Verified negative EE 1/29/24 Plural fluid
+Lots of debris and stringy stuff"
+44adf20fefe,0,False,False,False,decon/concentrated sample,bronchial-wash,,"No date on slide, unsure of sample type. Verified negative EE 1/29/24
+"
+ffb2ae75df5,0,False,False,False,decon/concentrated sample,tissue,,
+fae83f4adec,0,False,,,,,,
+efc978c28ab,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"First AO slide call was negative; culture turned positive 9 days, Kin pos from culture, MTBC identified by MALDI-TOF"
+44fcb243212,2,True,True,True,decon/concentrated sample,sputum,Mycobacterium avium,"AO positive 2+, culture turned positive 3 days, Kin pos from culture, M. avium-intracellulare complex ID by MALDI-TOF
+Heavily annotated use this one, not in the result by accession spreadsheet."
+6b4b126937e,1,True,True,True,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"First AO was positive, culture positive on 8/20, kin was negative due to lots of other organisms so a 2nd AO was performed from the MGIT culture 8/23 positive. ID by MALDI-TOF MTBC. Kin was pos for yeast and bacteria. 9/23 Spoke with Amanda and she interpreted the results as first AO pos 1+, MGIT pos. They made a kinyoun from the MGIT but could not discern the org so they made another AO and it was positive from that."
+68620943105,2,True,True,True,decon/concentrated sample,other,Mycobacterium tuberculosis,"AO pos 2+, culture turned positive 11 days, Kin pos from culture, BCG identified by PCR URINE"
+5bb5d40bce0,1,True,True,False,decon/concentrated sample,sputum,Mycobacterium tuberculosis,"Culture was negative for acid fast bacilli. Jeff explained sometimes the oragnism is not viable. MTBC. 9/5 maybe not MTBC. No notes in report on species.
+ Mycobacterium tuberculosis complex, heavily annoteted use this one. 9/5/2024 Maybe not MTBC no species identified in the report."
+010a0212f01,1,True,True,True,decon/concentrated sample,bal,Mycobacterium avium,"First AO slide call was negative; culture turned positive 8 days, Kin pos from culture, M. avium-intracellulare complex identified by MALDI-TOF"
+e67d15201c4,1,True,True,True,decon/concentrated sample,bronchial-wash,Mycobacterium tuberculosis,"AO pos 1+; culture turned positive 9 days, Kin pos from culture, MTBC identified by MALDI-TOF"
+653cfc3a1a7,3,True,True,,,,,"No accession, early slides uploaded into DSA? Heavily annotated."

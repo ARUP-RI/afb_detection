@@ -1,0 +1,55 @@
+[project]
+name = "afb"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "Paul English", email = "paul.english@aruplab.com" },
+    { name = "Muir Morrision", email = "muir.morrison@aruplab.com" },
+    { name = "Brendan O'Fallon", email = "brendan.o'fallon@aruplab.com" }
+]
+dependencies = [
+    "torchvision>=0.18.1",
+    "typer>=0.12.4",
+    "pytorch-lightning==2.3.3",
+    "pandas>=2.2.1",
+    "seaborn>=0.13.2",
+    "pydantic>=2.6.4",
+    "shapely>=2.0.6",
+    "comet-ml==3.39.3",
+    "python-dotenv>=1.0.1",
+    "nvidia-ml-py>=12.560.30",
+    "imgaug>=0.4.0",
+    "numpy~=1.26",
+    "torchmetrics[detection]>=1.4.1",
+    "webdataset>=0.2.100",
+    "torch-optimizer>=0.3.0",
+    "optuna>=4.0.0",
+    "torchcontrib>=0.0.2",
+    "scikit-learn>=1.6.0",
+]
+readme = "README.md"
+requires-python = ">= 3.9"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/afb"]
+
+[tool.uv]
+dev-dependencies = [
+    "ipykernel>=6.29.5",
+    "pytest>=8.3.3",
+    "ruff>=0.7.4",
+]
+
+[project.scripts]
+afb = "afb:app"
