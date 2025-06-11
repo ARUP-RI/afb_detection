@@ -6,7 +6,6 @@ hand, or the types get mangled after reading from file, etc.
 
 # from afb.data.image_id import ImageID
 
-
 BBOX_SCHEMA = [
     "item_id",
     "ground_truth",

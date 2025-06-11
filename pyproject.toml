@@ -51,5 +51,8 @@ dev-dependencies = [
     "ruff>=0.7.4",
 ]
 
+[tool.ruff]
+lint.ignore = ["E712"]
+
 [project.scripts]
 afb = "afb:app"

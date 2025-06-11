@@ -3,7 +3,6 @@ from typing import List, Optional, Tuple, Union
 
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import torch
 from torchvision.utils import draw_bounding_boxes, make_grid
 from PIL import Image, ImageColor, ImageDraw, ImageFont

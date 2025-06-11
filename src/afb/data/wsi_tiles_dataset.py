@@ -43,7 +43,7 @@ class WSITilesDataset(Dataset):
         assert (
             len(self.img_names) == len(self.label_names)
         ), f"Number of images and labels should be the same. Saw {len(self.img_names)} images and {len(self.label_names)} labels."
-        logger.debug(f"Checking for image/label filename mismatches...")
+        logger.debug("Checking for image/label filename mismatches...")
         start_time = time.time()
         for im, label in zip(self.img_names, self.label_names):
             assert (
@@ -62,7 +62,7 @@ class WSITilesDataset(Dataset):
         self.extents = []
         self.item_ids = []
         # self.specimens = []
-        logger.debug(f"Precomputing extents & item_ids...")
+        logger.debug("Precomputing extents & item_ids...")
         start_time = time.time()
         for img_name in self.img_names:
             lab_id, item_id, left, top, width, height = img_name.stem.split("_")
@@ -76,8 +76,10 @@ class WSITilesDataset(Dataset):
             # Or just pydantify Specimen to guarantee this?
             # assert 'clsi_m48' in metadata, f"Metadata for train/val should always have clsi_m48, item_id: {item_id}, metadata: {metadata}"
             # self.specimens.append(spec_lookup[item_id.get_lab_id()])
-        logger.debug(f"Precomputing extents & item_ids took {time.time() - start_time} seconds.")
-        logger.debug(f"WSITilesDataset initialized")
+        logger.debug(
+            f"Precomputing extents & item_ids took {time.time() - start_time} seconds."
+        )
+        logger.debug("WSITilesDataset initialized")
 
     def __len__(self):
         return len(self.img_names)

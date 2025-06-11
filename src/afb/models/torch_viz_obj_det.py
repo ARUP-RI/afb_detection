@@ -5,15 +5,11 @@ from torchvision.models.detection.backbone_utils import (
     _resnet_fpn_extractor,
     BackboneWithFPN,
 )
-from torchvision.models.detection.faster_rcnn import (
-    FasterRCNN_ResNet50_FPN_Weights,
-    FastRCNNPredictor,
-    FasterRCNN as _FasterRCNN,
-)
+from torchvision.models.detection.faster_rcnn import FasterRCNN as _FasterRCNN
+
 from torchvision.models.resnet import resnet50, ResNet50_Weights
 from torchvision.models.detection import FCOS, fcos_resnet50_fpn
 from torch import nn
-from torchmetrics.detection.mean_ap import MeanAveragePrecision
 
 from afb.models.base import BaseLightningModule
 from afb.config import BOX_IOU_THRESH, NMS_IOU_THRESH

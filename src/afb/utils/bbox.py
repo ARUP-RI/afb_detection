@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 
-import torch
 from typing import List, Tuple
 
 from afb.utils.geometry import PixelBox

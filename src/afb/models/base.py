@@ -285,16 +285,16 @@ class BaseLightningModule(pl.LightningModule):
             json.dump(prf_dict, f)
 
         logging.info(f"tile/box confusion matrix (idx: {idx_max}, fbeta: {max_fbeta})")
-        logging.info(f"+-------------+--------------+--------------+------------+")
-        logging.info(f"|             |    pp        |    pn        |            |")
-        logging.info(f"+-------------+--------------+--------------+------------+")
+        logging.info("+-------------+--------------+--------------+------------+")
+        logging.info("|             |    pp        |    pn        |            |")
+        logging.info("+-------------+--------------+--------------+------------+")
         logging.info(
             f'| p: {int(num_positives[idx_max]):8} | tp: {prf_dict["tp"]:8} | fn: {prf_dict["fn"]:8} | tpr: {prf_dict["tpr"]:.3f} |'
         )
         logging.info(
             f'| n: {int(num_negatives[idx_max]):8} | fp: {prf_dict["fp"]:8} | tn: {prf_dict["tn"]:8} | fpr: {prf_dict["fpr"]:.3f} |'
         )
-        logging.info(f"+-------------+--------------+--------------+------------+")
+        logging.info("+-------------+--------------+--------------+------------+")
 
         # type_as is needed to preserve device & avoid cuda errors
         self.val_tps = torch.zeros_like(self.box_score_thresh).type_as(self.val_tps)

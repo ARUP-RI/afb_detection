@@ -107,7 +107,7 @@ class MetaData:
         spec_df = cls._get_specimens()
         assert (
             wsi_df.lab_id.dtypes == spec_df.lab_id.dtypes
-        ), f"Type mismatch for lab_id b/w specimen and wsi DataFrames"
+        ), "Type mismatch for lab_id b/w specimen and wsi DataFrames"
         return wsi_df
 
     @classmethod
