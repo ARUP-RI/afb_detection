@@ -1,3 +1,4 @@
+
 from pathlib import Path
 from typing import Optional
 import warnings
@@ -21,6 +22,7 @@ from afb.utils.validation import (
 )
 from afb.utils.viz import wsi_ROC
 
+logger = logging.getLogger(__name__)
 app = typer.Typer()
 
 
@@ -97,15 +99,9 @@ def infer(
     # https://discuss.pytorch.org/t/runtimeerror-received-0-items-of-ancdata/4999/3
     torch.multiprocessing.set_sharing_strategy("file_system")
 
-    if device is None:
-        device = choose_single_gpu_if_available(min_mem_avail=min_vram_avail, dev=dev)
-    else:
-        device = torch.device(f"cuda:{device}")
-    model = load_model(model_name, model_weights, device, out_dir)
     out_dir.mkdir(exist_ok=True)
 
     dataset = WSITilesDataset(data_path)
-
     dataloader = DataLoader(
         dataset,
         batch_size=batch_size,
@@ -114,26 +110,35 @@ def infer(
         collate_fn=collate_fn,
         persistent_workers=True,
     )
+
+    if device is None:
+        device = choose_single_gpu_if_available(min_mem_avail=min_vram_avail, dev=dev)
+    else:
+        device = torch.device(f"cuda:{device}")
+    model = load_model(model_name, model_weights, device, out_dir)
+
     bbox_results, tiles_info = model.obj_det_predict(dataloader, dev)
 
     bbox_results, item_meta = post_proc_preds(bbox_results, tiles_info)
-    print("Computing densities...", flush=True)
+    logger.debug("Computing densities...")
     density_threshold_data = density_vs_threshold(bbox_results, item_meta)
 
-    print("Saving output...", flush=True)
+    logger.debug("Saving output...")
     save_output(
         out_dir,
         bbox_results,
         item_meta,
         density_threshold_data,
     )
-    print("drawing cat vs thresh...", flush=True)
+    logger.debug("drawing categorization vs threshold...")
     draw_categorization_vs_threshold(density_threshold_data, out_dir, agg=False)
     if item_meta.wsi_positive.any() and (~item_meta.wsi_positive).any():
-        # a WSI-level ROC only makes sense we have true positives & negatives
+        # a WSI-level ROC only makes sense if we have true positives & negatives
         # in the dataset, else we'll get div-by-0
-        print("Generating WSI ROC fig...", flush=True)
-        wsi_ROC(density_threshold_data).savefig(out_dir / "wsi_ROC.png")
+        logger.debug("Generating WSI ROC fig...")
+        fig, rates = wsi_ROC(density_threshold_data)
+        fig.savefig(out_dir / "wsi_ROC.png")
+        pd.DataFrame(rates).to_csv(out_dir / "wsi_ROC_rates.csv", index=False)
 
 
 if __name__ == "__main__":

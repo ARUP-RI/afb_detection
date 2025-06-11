@@ -13,7 +13,7 @@ app = typer.Typer(
     pretty_exceptions_enable=False,
 )
 
-app.add_typer(afb.inference.app, name="infer", help="Inference over data")
+app.add_typer(afb.inference.app, name="inference", help="Inference over data")
 app.add_typer(afb.train.app, name="train", help="Train model")
 
 if __name__ == "__main__":

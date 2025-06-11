@@ -9,9 +9,7 @@ from afb.utils.geometry import PixelBox
 
 from afb.utils.bbox import Vec2D, XYXYBox
 
-from afb.data.schema.pandas import coerce_pandas_item_ids
 from afb.data.m48_scale import M48Scale, density_per_1000x
-from afb.data.image_id import ImageID
 from afb.data.image_annotation import AFBLabel, filter_bboxes_by_objclass
 from afb.data.metadata import MetaData
 
@@ -65,7 +63,7 @@ def density_vs_threshold(bbox_predictions, item_predictions):
 
     # sort fails on class ImageID b/c __lt__ op isn't implemented or meaningful
     for item_id, df in bbox_predictions.groupby("item_id", sort=False):
-        item_id = ImageID.instantiate_type(item_id)
+        # item_id = ImageID.instantiate_type(item_id)
         item_preds = item_predictions[item_predictions.item_id == item_id]
         assert item_preds.shape[0] == 1
         item_preds = item_preds.iloc[0]
@@ -90,7 +88,7 @@ def density_vs_threshold(bbox_predictions, item_predictions):
 
             density_threshold_data.append(
                 {
-                    "item_id": str(item_id),
+                    "item_id": item_id,
                     "gt_m48": str(specimen.clsi_m48),
                     "ao_pos": ao_call,
                     "afb_pos": afb_positive,
@@ -311,8 +309,8 @@ def filter_by_item_id_and_patch(all_bboxes, xyxy_box, item_id):
     Returns a copy of all_bboxes that retains only those rows which
     match item_id and intersect xyxy_box.
     """
-    all_bboxes = coerce_pandas_item_ids(all_bboxes, ImageID)
-    assert isinstance(item_id, ImageID)
+    # all_bboxes = coerce_pandas_item_ids(all_bboxes, ImageID)
+    assert isinstance(item_id, str)
     # partially overlapping is ok, PIL will not draw out of bounds of the image I think, extrapolating
     # from this: https://stackoverflow.com/questions/41528576/how-can-i-write-text-on-an-image-and-not-go-outside-of-the-border
     overlapping_bboxes = all_bboxes[

@@ -4,7 +4,7 @@ rewriting the same type coercions for pandas depending on the task at
 hand, or the types get mangled after reading from file, etc.
 """
 
-from afb.data.image_id import ImageID
+# from afb.data.image_id import ImageID
 
 
 BBOX_SCHEMA = [
@@ -31,9 +31,9 @@ ITEM_SCHEMA = [
 ]
 
 
-def coerce_pandas_item_ids(df, coerce_type=ImageID):
-    _call = {ImageID: ImageID.instantiate_type, str: str}
-    _call = _call[coerce_type]
-    if not isinstance(df.iloc[0].item_id, coerce_type):
-        df["item_id"] = df["item_id"].apply(lambda x: _call(x))
-    return df
+# def coerce_pandas_item_ids(df, coerce_type=ImageID):
+#     _call = {ImageID: ImageID.instantiate_type, str: str}
+#     _call = _call[coerce_type]
+#     if not isinstance(df.iloc[0].item_id, coerce_type):
+#         df["item_id"] = df["item_id"].apply(lambda x: _call(x))
+#     return df

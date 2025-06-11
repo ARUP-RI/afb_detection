@@ -1,5 +1,6 @@
+import logging
+import time
 from pathlib import Path
-import yaml
 
 from torch.utils.data import Dataset
 from PIL import Image
@@ -8,6 +9,8 @@ from torchvision.transforms.functional import pil_to_tensor
 
 from afb.utils.geometry import PixelBox
 from afb.utils.bbox import XYXYBox
+
+logger = logging.getLogger(__name__)
 
 
 class WSITilesDataset(Dataset):
@@ -26,17 +29,27 @@ class WSITilesDataset(Dataset):
         self.transforms = transforms
 
         # This could get slow for very large datasets but for ~1/2 million
-        # tiles it's only a couple sec, prob ok for afb
+        # tiles it's only a couple sec, prob ok for afb. Debug logging in
+        # case it becomes a bigger problem
+        logger.debug(f"Globbing for images in {root_dir}...")
+        start_time = time.time()
         self.img_names = sorted(list((root_dir / "images").rglob("*.png")))
+        logger.debug(f"...took {time.time() - start_time} seconds.")
+        logger.debug(f"Globbing for labels in {root_dir}...")
+        start_time = time.time()
         self.label_names = sorted(list((root_dir / "labels").rglob("*.txt")))
+        logger.debug(f"...took {time.time() - start_time} seconds.")
 
         assert (
             len(self.img_names) == len(self.label_names)
         ), f"Number of images and labels should be the same. Saw {len(self.img_names)} images and {len(self.label_names)} labels."
+        logger.debug(f"Checking for image/label filename mismatches...")
+        start_time = time.time()
         for im, label in zip(self.img_names, self.label_names):
             assert (
                 im.stem == label.stem
             ), f"Image/label filename mismatch: {im} vs {label}"
+        logger.debug(f"...took {time.time() - start_time} seconds.")
 
         # with open(root_dir / 'data_conf.yaml') as fh:
         #     data_conf = yaml.safe_load(fh)
@@ -49,6 +62,8 @@ class WSITilesDataset(Dataset):
         self.extents = []
         self.item_ids = []
         # self.specimens = []
+        logger.debug(f"Precomputing extents & item_ids...")
+        start_time = time.time()
         for img_name in self.img_names:
             lab_id, item_id, left, top, width, height = img_name.stem.split("_")
             left, top, width, height = int(left), int(top), int(width), int(height)
@@ -61,6 +76,8 @@ class WSITilesDataset(Dataset):
             # Or just pydantify Specimen to guarantee this?
             # assert 'clsi_m48' in metadata, f"Metadata for train/val should always have clsi_m48, item_id: {item_id}, metadata: {metadata}"
             # self.specimens.append(spec_lookup[item_id.get_lab_id()])
+        logger.debug(f"Precomputing extents & item_ids took {time.time() - start_time} seconds.")
+        logger.debug(f"WSITilesDataset initialized")
 
     def __len__(self):
         return len(self.img_names)
