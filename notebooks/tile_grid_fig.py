@@ -5,8 +5,7 @@ import pandas as pd
 import torch
 
 from afb.data.image_annotation import AFBLabel
-from afb.data.schema.pandas import coerce_pandas_item_ids
-from afb.data.yolo_dataset import YOLODataset
+from afb.data.wsi_tiles_dataset import WSITilesDataset
 from afb.utils.viz import patch_grid_w_bboxes
 from afb.utils.validation import collect_gt_and_pred_bboxes, get_1st_n_patches_w_bboxes
 
@@ -14,17 +13,15 @@ from afb.utils.validation import collect_gt_and_pred_bboxes, get_1st_n_patches_w
 # This is a hacky copy-paste of some code from `train.py` and `viz.py` that I used to interactively pick some nice tiles that aren't too cluttered so we can show some example tiles with confidence scores on the images directly. Basically I used the various priority sortings to find some interesting tiles, then I looked up the annotations on those tiles from the `patch_bboxes_dfs` list, then constructed a new dataframe of interesting "landmark" annotations to prepend to the filtering process that selects annotations/tiles for the grid.
 
 # %%
-val_dataset = YOLODataset(
-    root_dir=Path("/mnt/ri_share/Data/muir/afb/datasets/2024-12-16/test_poster"),
+val_dataset = WSITilesDataset(
+    root_dir=Path(__file__).parents[1] / "datasets" / "obj_det_test",
 )
 bbox_results = pd.read_csv(
-    "/mnt/ri_share/Data/muir/afb/outputs/2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/test_poster/bbox_results.csv"
+    Path(__file__).parents[1] / "results/paper_unfrozen_bb/obj_det_test/bbox_results.csv"
 )
 item_results = pd.read_csv(
-    "/mnt/ri_share/Data/muir/afb/outputs/2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/test_poster/item_results.csv"
+    Path(__file__).parents[1] / "results/paper_unfrozen_bb/obj_det_test/item_results.csv"
 )
-bbox_results = coerce_pandas_item_ids(bbox_results)
-item_results = coerce_pandas_item_ids(item_results)
 
 # collect_gt_and_pred_bboxes needs extra item-level metadata
 bbox_results = bbox_results.merge(item_results, how="left", on="item_id")
@@ -38,8 +35,7 @@ all_bboxes["area"] = (all_bboxes["x2"] - all_bboxes["x1"]) * (
 all_bboxes
 
 # %%
-cherry_picked_rows = pd.read_csv("../notebooks/cherry_picked_tiles.csv")
-cherry_picked_rows = coerce_pandas_item_ids(cherry_picked_rows)
+cherry_picked_rows = pd.read_csv(Path(__file__).parents[0] / "cherry_picked_tiles.csv")
 
 # %%
 color_tp = "green"
@@ -86,6 +82,6 @@ for i, s in enumerate(chunked_slices):
 im_grids
 
 # %%
-im_grids[0].savefig("../notebooks/cherry_picked_tiles.png")
+im_grids[0].savefig(Path(__file__).parents[0] / "cherry_picked_tiles.png")
 
 # %%

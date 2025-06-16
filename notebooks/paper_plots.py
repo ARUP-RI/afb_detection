@@ -13,9 +13,8 @@ from afb.data.image_annotation import AFBLabel
 from afb.utils.viz import wsi_ROC, show_im_grids_for_dataset
 from afb.data.wsi_tiles_dataset import WSITilesDataset
 from afb.utils.validation import collect_gt_and_pred_bboxes
-from afb.data.schema.pandas import coerce_pandas_item_ids
 
-OUTROOT = Path("/mnt/ri_share/Data/muir/afb/outputs/")
+RESULTS_ROOT = Path(__file__).parents[1] / "results"
 
 
 # %%
@@ -92,16 +91,14 @@ def colored_line(x, y, c, ax, **lc_kwargs):
 
 # %%
 val_dataset = WSITilesDataset(
-    root_dir=Path("/mnt/ri_share/Data/muir/afb/datasets/2024-12-16/test_poster"),
+    root_dir=Path(__file__).parents[1] / "datasets" / "obj_det_test",
 )
 bbox_results = pd.read_csv(
-    "/mnt/ri_share/Data/muir/afb/outputs/2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/test_poster/bbox_results.csv"
+    Path(__file__).parents[1] / "results/paper_unfrozen_bb/obj_det_test/bbox_results.csv"
 )
 item_results = pd.read_csv(
-    "/mnt/ri_share/Data/muir/afb/outputs/2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/test_poster/item_results.csv"
+    Path(__file__).parents[1] / "results/paper_unfrozen_bb/obj_det_test/item_results.csv"
 )
-bbox_results = coerce_pandas_item_ids(bbox_results)
-item_results = coerce_pandas_item_ids(item_results)
 
 # collect_gt_and_pred_bboxes needs extra item-level metadata
 bbox_results = bbox_results.merge(item_results, how="left", on="item_id")
@@ -123,7 +120,7 @@ imgrid = show_im_grids_for_dataset(
     rescale_scores=(0.15, 0.75),
     title="",
 )
-imgrid[0].savefig("patch_grid.png")
+imgrid[0].savefig(Path(__file__).parents[0] / "patch_grid.png")
 
 # %% [markdown]
 # ## Object- & Slide-level results
@@ -136,11 +133,11 @@ imgrid[0].savefig("patch_grid.png")
 
 # %%
 with open(
-    OUTROOT / "2024-12-30/2024-12-30_convnext_fcos_frozen_bb/val_metrics.json"
+    RESULTS_ROOT / "paper_frozen_bb/val_metrics.json"
 ) as f:
     frozen_val_obj_mets = json.load(f)
 with open(
-    OUTROOT / "2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/val_metrics.json"
+    RESULTS_ROOT / "paper_unfrozen_bb/val_metrics.json"
 ) as f:
     val_obj_mets = json.load(f)
 
@@ -265,8 +262,7 @@ for i in (0, 1):
 
 # ------------ WSI-level plots ----------
 dens_th_dat = pd.read_csv(
-    OUTROOT
-    / "2024-12-30/2024-12-30_convnext_fcos_unfrozen_run01/testval_combined10k/density_threshold.csv"
+    RESULTS_ROOT / "paper_unfrozen_bb/slide_pred_val/density_threshold.csv"
 )
 _, rates = wsi_ROC(
     dens_th_dat,
@@ -314,6 +310,6 @@ for label, sub_ax in zip(
     )
 
 # %%
-fig.savefig("plots.png")
+fig.savefig(Path(__file__).parents[0] / "plots.png")
 
 # %%
