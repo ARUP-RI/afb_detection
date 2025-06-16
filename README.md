@@ -2,8 +2,46 @@
 
 TODO: fill in details such as
 - links to trained model & datasets on huggingface
-- setup instructions with `uv`
-- instructions to run training & inference scripts
-    - include hyperparams we used for the model run shown in the paper, and maybe guidance on hyperparams
-    - replicating paper results: training can be done in ~1-1.5 hr on an L40S, but inference on full validation set (>1.8M tiles) can take ~90-180 min. (Estimates are rough & depend on batch sizes, GPU utilization, early stopping, etc.)
 - basic outline of the code logic
+
+## Python setup
+To run the code in this repo, we recommend using `uv` for building a python environment. [Installation instructions can be found here](https://docs.astral.sh/uv/getting-started/installation/) if you haven't used `uv` before. Once `uv` is installed, running `uv sync` in your favorite terminal will regenerate a functioning env from the `uv.lock` file in this repo.
+
+## Training
+Once the python env is built, training can be run directly using the `afb` cli, typically from a bash script something like
+```
+# Find the path to the .env file and source it to set Comet workspace & API key
+SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
+source "${SCRIPT_DIR}/../.env"
+
+RUN_NAME='datestamp_and_descriptive_name_for_the_experiment'
+RESULTS_ROOT=/some/path/to/save/experiments/in
+
+mkdir -p $RESULTS_ROOT/$RUN_NAME
+
+afb train main \
+        /path/to/object/detection/training/dataset/ \
+        /path/to/object/detection/test/dataset/ \
+        $RESULTS_ROOT/$RUN_NAME \
+        --run-name=$RUN_NAME \
+```
+See `src/afb/train.py` for complete listing of available cli options, and also see the `conf.yaml` stored with our trained models for the specific options used by the experiments reported in the paper.
+
+We use comet.ml for tracking experiments, which requires the `COMET_API_KEY` and `COMET_WORKSPACE` env variables to be sourced.
+
+_TODO_: remove comet dependency for easier reproducibility by others?
+
+On an L40S GPU, training runs as reported in the paper can be done in about 1-1.5 hours, depending on choice of batch size, early stopping, etc.
+
+## Inference
+Similarly, a bash script something like below will take a trained model & generate predictions over a provided dataset:
+```
+MODEL_CHOICE='convnext_fcos' # see src/afb/inference.py
+
+afb inference infer \
+        $MODEL_CHOICE \
+        /path/to/model/checkpoint \
+        /path/to/dataset/ \
+        --out-dir /path/to/dir/to/save/results/in/ \
+```
+Running inference on our slide predictions validation set (188 WSI with 10k tiles per slide) can take 2-3 hours on an L40S, depending on batch size, fileio speed, etc.
