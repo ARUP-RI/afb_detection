@@ -17,10 +17,12 @@ val_dataset = WSITilesDataset(
     root_dir=Path(__file__).parents[1] / "datasets" / "obj_det_test",
 )
 bbox_results = pd.read_csv(
-    Path(__file__).parents[1] / "results/paper_unfrozen_bb/obj_det_test/bbox_results.csv"
+    Path(__file__).parents[1]
+    / "results/paper_unfrozen_bb/obj_det_test/bbox_results.csv"
 )
 item_results = pd.read_csv(
-    Path(__file__).parents[1] / "results/paper_unfrozen_bb/obj_det_test/item_results.csv"
+    Path(__file__).parents[1]
+    / "results/paper_unfrozen_bb/obj_det_test/item_results.csv"
 )
 
 # collect_gt_and_pred_bboxes needs extra item-level metadata
