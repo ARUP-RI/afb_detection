@@ -9,7 +9,6 @@ from afb.utils.geometry import compute_effective_area
 from afb.data.m48_scale import density_per_1000x
 from afb.utils.gpus import choose_single_gpu_if_available
 
-# from afb.data.schema.pandas import coerce_pandas_item_ids
 from afb.data.image_annotation import AFBLabel
 from afb.data.schema.pandas import ITEM_SCHEMA
 from afb.data.metadata import MetaData
@@ -81,7 +80,6 @@ def post_proc_preds(obj_preds, tiles_info, device=None, min_box_microns=2):
         device = choose_single_gpu_if_available()
     all_obj_preds = []
     all_item_meta = []
-    # obj_preds = coerce_pandas_item_ids(obj_preds)
     print(f"obj_preds: {obj_preds}")
     wrapped_iter = tqdm(obj_preds.groupby("item_id", sort=False))
     for item_id, group_df in wrapped_iter:
@@ -105,5 +103,4 @@ def post_proc_preds(obj_preds, tiles_info, device=None, min_box_microns=2):
     all_obj_preds = pd.concat(all_obj_preds)
     all_item_meta = pd.DataFrame(all_item_meta, columns=ITEM_SCHEMA)
     print(f"all_item_meta: {all_item_meta}")
-    # all_item_meta = coerce_pandas_item_ids(all_item_meta)
     return all_obj_preds, all_item_meta

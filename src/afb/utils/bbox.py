@@ -8,8 +8,6 @@ from afb.utils.geometry import PixelBox
 # and keep consistent with np api
 
 
-# TODO: migrate these classes to slidearm? Might be a natural fit there,
-# and boxen might be able to make use of them then as well?
 @dataclass
 class Vec2D:
     x: float
@@ -102,12 +100,13 @@ class XYXYBox:
             or self.x2.y <= other.x1.y
         )
 
-    def from_points(x1, y1, x2, y2) -> "XYXYBox":
-        # MM: I think this was a typo before?
+    @classmethod
+    def from_points(cls, x1: float, y1: float, x2: float, y2: float) -> "XYXYBox":
         return XYXYBox(Vec2D(x1, y1), Vec2D(x2, y2))
 
+    @classmethod
     def from_center_box(
-        center_x: float, center_y: float, width: float, height: float
+        cls, center_x: float, center_y: float, width: float, height: float
     ) -> "XYXYBox":
         """Create a new XYXYBox from a center_x, center_y, width, height box"""
         return XYXYBox(
@@ -127,7 +126,9 @@ class XYXYBox:
             self.x2.y - self.x1.y,
         )
 
+    @classmethod
     def from_normalized_center_box(
+        cls,
         center_x: float,
         center_y: float,
         width: float,
@@ -157,7 +158,8 @@ class XYXYBox:
             (self.x2.y - self.x1.y) / img_size[1],
         )
 
-    def from_pixel_box(pb: PixelBox) -> "XYXYBox":
+    @classmethod
+    def from_pixel_box(cls, pb: PixelBox) -> "XYXYBox":
         return XYXYBox(
             Vec2D(pb.left, pb.top), Vec2D(pb.left + pb.width, pb.top + pb.height)
         )
@@ -169,7 +171,7 @@ class XYXYBox:
         """Shifts this XYXYBox by the supplied vector."""
         return XYXYBox(self.x1 + vec, self.x2 + vec)
 
-    def area(self) -> int:
+    def area(self) -> float:
         """Calculate the area of this box"""
         return (self.x2.x - self.x1.x) * (self.x2.y - self.x1.y)
 

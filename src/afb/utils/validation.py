@@ -59,11 +59,9 @@ def boxes_tp_fp_fn(targ_boxes, pred_boxes):
 def density_vs_threshold(bbox_predictions, item_predictions):
     density_threshold_data = []
     thresholds = np.linspace(0, 1, 101)
-    # item_predictions = coerce_pandas_item_ids(item_predictions, coerce_type=ImageID)
 
     # sort fails on class ImageID b/c __lt__ op isn't implemented or meaningful
     for item_id, df in bbox_predictions.groupby("item_id", sort=False):
-        # item_id = ImageID.instantiate_type(item_id)
         item_preds = item_predictions[item_predictions.item_id == item_id]
         assert item_preds.shape[0] == 1
         item_preds = item_preds.iloc[0]
@@ -110,11 +108,6 @@ def draw_categorization_vs_threshold(density_threshold_data, output_dir, agg=Tru
             x="threshold", y="density", hue="gt_m48", data=density_threshold_data
         )
     else:
-        # need str ids b/c (I suspect?) lineplot is doing a sorted groupby
-        # density_threshold_data = coerce_pandas_item_ids(
-        #     density_threshold_data,
-        #     coerce_type=str
-        # )
         sns.lineplot(
             x="threshold",
             y="density",
@@ -132,7 +125,6 @@ def draw_categorization_vs_threshold(density_threshold_data, output_dir, agg=Tru
     category_text = ["+/-", "1+", "2+", "3+", "4+"]
     for thresh, thresh_text in zip(category_thresholds, category_text):
         plt.axhline(y=thresh, color=(0, 0, 0, 0.2), linestyle="--", linewidth=1)
-        # plt.text(1, thresh * 1.1, thresh_text, color='gray', fontsize='x-small')
     plt.yticks(ticks=category_thresholds, labels=category_text)
     legend = plt.legend()
 
@@ -147,7 +139,6 @@ def draw_categorization_vs_threshold(density_threshold_data, output_dir, agg=Tru
         "True": "Positive",
     }
 
-    # print('-', legend.texts)
     plt.ylim(0, 100)
 
     for t in legend.texts:
@@ -234,7 +225,6 @@ def tp_fp_fn_tn_rates(
         fpr.append(fp / n_neg)
         tnr.append(tn / n_neg)
         fnr.append(fn / n_pos)
-        # print(f"tp: {tp}, fp: {fp}, fn: {fn}, tn: {tn}")
     tpr = np.asarray(tpr)
     fpr = np.asarray(fpr)
     tnr = np.asarray(tnr)
@@ -272,8 +262,6 @@ def get_1st_n_patches_w_bboxes(dataset, all_bboxes, n):
         ],
         columns=["x1", "y1", "x2", "y2", "item_id"],
     )
-    # df_extents = coerce_pandas_item_ids(df_extents, ImageID)
-    # all_bboxes = coerce_pandas_item_ids(all_bboxes, ImageID)
     ds_patch_indices = []
     patch_bboxes_dfs = []
     for i, row in enumerate(all_bboxes.itertuples()):
@@ -309,7 +297,6 @@ def filter_by_item_id_and_patch(all_bboxes, xyxy_box, item_id):
     Returns a copy of all_bboxes that retains only those rows which
     match item_id and intersect xyxy_box.
     """
-    # all_bboxes = coerce_pandas_item_ids(all_bboxes, ImageID)
     assert isinstance(item_id, str)
     # partially overlapping is ok, PIL will not draw out of bounds of the image I think, extrapolating
     # from this: https://stackoverflow.com/questions/41528576/how-can-i-write-text-on-an-image-and-not-go-outside-of-the-border

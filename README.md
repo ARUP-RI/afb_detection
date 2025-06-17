@@ -1,11 +1,16 @@
 # Object detection models for acid-fast bacilli screening
 
 TODO: fill in details such as
-- links to trained model & datasets on huggingface
+- link to paper once it's posted
 - basic outline of the code logic
 
+## Models & Datasets
+Our trained models, as used to generate the results in our paper, [are available on Huggingface](https://huggingface.co/arup-ri/afb), as are the [datasets they were trained and evaluated on](https://huggingface.co/datasets/arup-ri/kinyoun_afb_50k). Of special note is the validation set for WSI-level predictions, which is split into chunks because of its size(~100Gb). To reassemble them,
+<nobr>`cat *.tar.gz.* | tar xvfz -`</nobr> <!-- (per [this source](https://stackoverflow.com/a/38199694)) -->
+or similar should work on most *nix-like systems. Note you'll need over 200Gb of free space to download & then combine the chunks!
+
 ## Python setup
-To run the code in this repo, we recommend using `uv` for building a python environment. [Installation instructions can be found here](https://docs.astral.sh/uv/getting-started/installation/) if you haven't used `uv` before. Once `uv` is installed, running `uv sync` in your favorite terminal will regenerate a functioning env from the `uv.lock` file in this repo.
+To run the code in this repo, we recommend using `uv` for building a python environment. [Installation instructions can be found here](https://docs.astral.sh/uv/getting-started/installation/) if you haven't used `uv` before. Once `uv` is installed, running `uv sync` in your favorite terminal will regenerate a functioning `.venv` from the `uv.lock` file in this repo.
 
 ## Training
 Once the python env is built, training can be run directly using the `afb` cli, typically from a bash script something like

@@ -21,22 +21,6 @@ class MetaData:
     solution I've found is to explicitly tell pandas the proper type for
     each column, and I'm using Pandas types that handle null values gracefully
     instead of numpy types that do strange things.
-
-    This class should let us get rid of DjangoAPI, but also Specimen,
-    LabID, ImageID, and maybe ImageAnnotation(s). Without having to
-    juggle checksums, wsi filepaths, etc, now IDs for scans and
-    specimens can just always be str, and all lookups go through
-    this class. Instead of a custom Specimen type, the metadata for
-    one specimen can just be a Pandas Series, and with type conversion
-    handled in one place (this class), that should be adequate.
-
-    A corollary/aside on getting rid of Specimen: PatchesDataset currently
-    returns a dict of image, target, item_id, extent, and specimen. As far
-    as I can tell, we're only ever using specimen to lookup AO+/- and ground
-    truth AFB+/- values. If the lookup provided by this class isn't too slow,
-    we could possibly just drop the specimen from dataset __getitem__ in the
-    new webdatasets and just lookup the specimen from the item_id as needed. I
-    think extent is still necessary though? I don't see a way around that yet.
     """
 
     @classmethod
@@ -57,10 +41,6 @@ class MetaData:
                 "notes": "string",
             },
         )
-        # not sure if there"s still issues in our old text-based ao_pos column
-        # but I know the clsi_m48 col is correct, so binarize that instead.
-        # Note pd.NA values remain pd.NA as desired
-        # spec_df["ao_pos"] = spec_df["clsi_m48"] > 0
         spec_df = spec_df[
             [
                 "lab_id",
@@ -115,7 +95,6 @@ class MetaData:
         spec_df = cls._get_specimens()
         wsi_df = cls._get_wsis()
         if item_id is not None:
-            # print(f"spec lookup for item_id: {item_id}")
             item_id = str(item_id)
             row = wsi_df[wsi_df.checksum_hash == item_id]
             assert (
@@ -123,7 +102,6 @@ class MetaData:
             ), f"Should be exactly 1 entry for item_id {item_id} in metadata table but found {len(row)} entries!"
             if lab_id is None:
                 lab_id = str(row.iloc[0].lab_id)
-                # print(f"item_id {item_id} is linked to lab_id {lab_id}")
             else:
                 lab_id = str(lab_id)
                 assert (

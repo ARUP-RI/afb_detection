@@ -121,10 +121,7 @@ def draw_pred_bounding_boxes(
     img_to_draw = Image.fromarray(ndarr)
     img_boxes = boxes.to(torch.int64).tolist()
 
-    # if fill:
     draw = ImageDraw.Draw(img_to_draw, "RGBA")
-    # else:
-    #     draw = ImageDraw.Draw(img_to_draw)
 
     for bbox, color, label in zip(img_boxes, colors, labels):  # type: ignore[arg-type]
         if fill:

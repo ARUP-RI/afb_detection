@@ -51,17 +51,10 @@ class WSITilesDataset(Dataset):
             ), f"Image/label filename mismatch: {im} vs {label}"
         logger.debug(f"...took {time.time() - start_time} seconds.")
 
-        # with open(root_dir / 'data_conf.yaml') as fh:
-        #     data_conf = yaml.safe_load(fh)
-        # self.patch_size = data_conf['patch_properties']['patch_size']
-        # lab_ids = [single['lab_id'] for single in data_conf['lab_ids']]
-        # spec_lookup = {lab_id:Specimen(LabID(lab_id)) for lab_id in lab_ids}
-
         # useful to have extent & item_id & specimen for each patch available
         # w/o having to load the image via __getitem__
         self.extents = []
         self.item_ids = []
-        # self.specimens = []
         logger.debug("Precomputing extents & item_ids...")
         start_time = time.time()
         for img_name in self.img_names:
@@ -70,12 +63,7 @@ class WSITilesDataset(Dataset):
             self.extents.append(
                 PixelBox(left=left, top=top, width=width, height=height)
             )
-            # item_id = ImageID.instantiate_type(item_id)
             self.item_ids.append(item_id)
-            # TODO: add assertions that specimen has the needed metadata fields?
-            # Or just pydantify Specimen to guarantee this?
-            # assert 'clsi_m48' in metadata, f"Metadata for train/val should always have clsi_m48, item_id: {item_id}, metadata: {metadata}"
-            # self.specimens.append(spec_lookup[item_id.get_lab_id()])
         logger.debug(
             f"Precomputing extents & item_ids took {time.time() - start_time} seconds."
         )
@@ -132,5 +120,4 @@ class WSITilesDataset(Dataset):
             "target": target,
             "item_id": self.item_ids[idx],
             "extent": self.extents[idx],
-            # 'specimen': self.specimens[idx],
         }

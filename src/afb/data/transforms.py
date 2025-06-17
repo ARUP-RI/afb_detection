@@ -14,14 +14,12 @@ def collate_fn(batch):
     targets = [i["target"] for i in batch]
     item_ids = [i["item_id"] for i in batch]
     extents = [i["extent"] for i in batch]
-    # specimens = [i["specimen"] for i in batch]
 
     return {
         "image": torch.stack(images),
         "target": list(targets),
         "item_id": list(item_ids),
         "extent": list(extents),
-        # "specimen": list(specimens),
     }
 
 

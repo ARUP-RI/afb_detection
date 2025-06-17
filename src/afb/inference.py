@@ -15,7 +15,6 @@ from afb.models.torch_viz_obj_det import TorchVizObjDet
 from afb.data.transforms import collate_fn
 from afb.data.wsi_tiles_dataset import WSITilesDataset
 
-# from afb.data.schema.pandas import coerce_pandas_item_ids
 from afb.utils.validation import (
     density_vs_threshold,
     draw_categorization_vs_threshold,
@@ -71,11 +70,8 @@ def save_output(
         return  # No results to write
 
     bboxes = bbox_results.copy()
-    # bboxes = coerce_pandas_item_ids(bboxes, str)
     items = item_results.copy()
-    # items = coerce_pandas_item_ids(items, str)
     densities = density_threshold_data.copy()
-    # densities = coerce_pandas_item_ids(densities, str)
 
     if out_dir is not None:
         bboxes.to_csv(out_dir / "bbox_results.csv", index=False)
