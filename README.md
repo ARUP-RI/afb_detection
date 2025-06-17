@@ -5,9 +5,9 @@ TODO: fill in details such as
 - basic outline of the code logic
 
 ## Models & Datasets
-Our trained models, as used to generate the results in our paper, [are available on Huggingface](https://huggingface.co/arup-ri/afb), as are the [datasets they were trained and evaluated on](https://huggingface.co/datasets/arup-ri/kinyoun_afb_50k). Of special note is the validation set for WSI-level predictions, which is split into chunks because of its size(~100Gb). To reassemble them,
-<nobr>`cat *.tar.gz.* | tar xvfz -`</nobr> <!-- (per [this source](https://stackoverflow.com/a/38199694)) -->
-or similar should work on most *nix-like systems. Note you'll need over 200Gb of free space to download & then combine the chunks!
+Our trained models, as used to generate the results in our paper, [are available on Huggingface](https://huggingface.co/arup-ri/afb), as are the [datasets they were trained and evaluated on](https://huggingface.co/datasets/arup-ri/kinyoun_afb_50k). Of special note is the validation set for WSI-level predictions, which is split into chunks because of its size(~100Gb). To reassemble them, <nobr>`cat *.tar.gz.* | tar xvfz -`</nobr>
+or similar should work on most *nix-like systems (expect this extraction to take at least 15 min, even with fast disk io). Note you'll need over 200Gb of free space to download & then combine the chunks!
+<!-- (per [this source](https://stackoverflow.com/a/38199694)) -->
 
 ## Python setup
 To run the code in this repo, we recommend using `uv` for building a python environment. [Installation instructions can be found here](https://docs.astral.sh/uv/getting-started/installation/) if you haven't used `uv` before. Once `uv` is installed, running `uv sync` in your favorite terminal will regenerate a functioning `.venv` from the `uv.lock` file in this repo.
