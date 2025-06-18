@@ -22,8 +22,7 @@ class WSITilesDataset(Dataset):
         """
         Args:
             root_dir: path to the directory containing the dataset.
-                Should have subdirs 'images' and 'labels' as well as a
-                'data_conf.yaml' as generated in build_data.py
+                Should have subdirs 'images' and 'labels'
             transforms: (optional) a function/transform to apply on the image and target.
         """
         self.transforms = transforms
