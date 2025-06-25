@@ -1,8 +1,6 @@
 # Object detection models for acid-fast bacilli screening
 
-TODO: fill in details such as
-- link to paper once it's posted
-- basic outline of the code logic
+[Paper](https://journals.asm.org/doi/10.1128/spectrum.00602-25)
 
 ## Models & Datasets
 Our trained models, as used to generate the results in our paper, [are available on Huggingface](https://huggingface.co/arup-ri/afb), as are the [datasets they were trained and evaluated on](https://huggingface.co/datasets/arup-ri/kinyoun_afb_50k). Of special note is the validation set for WSI-level predictions, which is split into chunks because of its size(~100Gb). To reassemble them, <nobr>`cat *.tar.gz.* | tar xvfz -`</nobr>
