@@ -48,3 +48,23 @@ afb inference infer \
         --out-dir /path/to/dir/to/save/results/in/ \
 ```
 Running inference on our slide predictions validation set (188 WSI with 10k tiles per slide) can take 2-3 hours on an L40S, depending on batch size, fileio speed, etc.
+
+## How to cite
+
+```
+@article{english_use_2025,
+	title = {Use of a convolutional neural network for direct detection of acid-fast bacilli from clinical specimens},
+	volume = {0},
+	url = {https://journals.asm.org/doi/10.1128/spectrum.00602-25},
+	doi = {10.1128/spectrum.00602-25},
+	number = {0},
+	urldate = {2025-06-25},
+	journal = {Microbiology Spectrum},
+	author = {English, Paul and Morrison, Muir J. and Mathison, Blaine and Enrico, Elizabeth and Shean, Ryan and O'Fallon, Brendan and Rupp, Deven and Knight, Katie and Rangel, Alexandra and Gilivary, Jeffrey and Vance, Amanda and Hatch, Haleina and Lin, Leo and Ng, David P. and Shakir, Salika M.},
+	month = jun,
+	year = {2025},
+	note = {Publisher: American Society for Microbiology},
+	pages = {e00602--25},
+	file = {Full Text PDF:/Users/paul.english/Zotero/storage/PBFKYY88/English et al. - 2025 - Use of a convolutional neural network for direct detection of acid-fast bacilli from clinical specim.pdf:application/pdf},
+}
+```
